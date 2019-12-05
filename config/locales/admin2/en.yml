@@ -11,3 +11,6 @@ en:
       general_group: 'General'
       general:
         essentials: 'Essentials'
+    seo:
+      title: '%{title} | %{service_name} Go Admin panel'
+      description: 'Manage the %{title} settings of your %{service_name} Sharetribe Go marketplace'

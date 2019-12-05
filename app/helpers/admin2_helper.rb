@@ -13,4 +13,18 @@ module Admin2Helper
       general: %w[essentials]
     }
   end
+
+  def admin_title
+    title = t('admin2.seo.title', title: content_for(:title), service_name: title_service_name)
+    strip_tags(custom_meta_title(title.squish))
+  end
+
+  def admin_description
+    title = t('admin2.seo.description', title: content_for(:title), service_name: title_service_name)
+    strip_tags(custom_meta_description(title.squish))
+  end
+
+  def title_service_name
+    @current_community.full_name(I18n.locale).to_s
+  end
 end
