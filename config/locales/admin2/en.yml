@@ -1,0 +1,13 @@
+en:
+  admin2:
+    topnav:
+      logo: 'Sharetribe Go Admin Panel'
+      menu: 'Menu'
+      goto_marketplace: 'Go to your Marketplace'
+      avatar: 'Sharetribe Go Admin'
+      logout: 'Log out'
+    sidebar:
+      dashboard: 'Dashboard'
+      general_group: 'General'
+      general:
+        essentials: 'Essentials'

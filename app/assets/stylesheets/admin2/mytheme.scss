@@ -9928,10 +9928,10 @@ body {
           background-size: 7px 5px;
   vertical-align: 1px !important;
   margin-left: 4px !important;
-  background-image: url("../assets/svg/arrow-down.svg"); }
+  background-image: url(image_path("svg/arrow-down.svg")); }
 
 .dropdown-toggle:hover::after {
-  background-image: url("../assets/svg/arrow-down-hover.svg"); }
+  background-image: url(image_path("svg/arrow-down-hover.svg")); }
 
 h1 {
   font-size: 16px;
@@ -9965,49 +9965,49 @@ h6 {
 /* CircularStd @font-face kit */
 @font-face {
   font-family: 'CircularStd';
-  src: url("../assets/font-files/circular-std/CircularStd-Black.woff2") format("woff2");
+  src: font-url("circular-std/CircularStd-Black.woff2") format("woff2");
   font-weight: 800;
   font-style: normal; }
 
 @font-face {
   font-family: 'CircularStd';
-  src: url("../assets/font-files/circular-std/CircularStd-BlackItalic.woff2") format("woff2");
+  src: font-url("circular-std/CircularStd-BlackItalic.woff2") format("woff2");
   font-weight: 800;
   font-style: italic; }
 
 @font-face {
   font-family: 'CircularStd';
-  src: url("../assets/font-files/circular-std/CircularStd-Bold.woff2") format("woff2");
+  src: font-url("circular-std/CircularStd-Bold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal; }
 
 @font-face {
   font-family: 'CircularStd';
-  src: url("../assets/font-files/circular-std/CircularStd-BoldItalic.woff2") format("woff2");
+  src: font-url("circular-std/CircularStd-BoldItalic.woff2") format("woff2");
   font-weight: 600;
   font-style: italic; }
 
 @font-face {
   font-family: 'CircularStd';
-  src: url("../assets/font-files/circular-std/CircularStd-Medium.woff2") format("woff2");
+  src: font-url("circular-std/CircularStd-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal; }
 
 @font-face {
   font-family: 'CircularStd';
-  src: url("../assets/font-files/circular-std/CircularStd-MediumItalic.woff2") format("woff2");
+  src: font-url("circular-std/CircularStd-MediumItalic.woff2") format("woff2");
   font-weight: 500;
   font-style: italic; }
 
 @font-face {
   font-family: 'CircularStd';
-  src: url("../assets/font-files/circular-std/CircularStd-Book.woff2") format("woff2");
+  src: font-url("circular-std/CircularStd-Book.woff2") format("woff2");
   font-weight: 400;
   font-style: normal; }
 
 @font-face {
   font-family: 'CircularStd';
-  src: url("../assets/font-files/circular-std/CircularStd-BookItalic.woff2") format("woff2");
+  src: font-url("circular-std/CircularStd-BookItalic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic; }
 
@@ -10615,7 +10615,7 @@ input.search-header {
   -webkit-box-shadow: none;
           box-shadow: none;
   width: 100%;
-  background-image: url("../assets/svg/search.svg");
+  background-image: url(image_path("svg/search.svg"));
   background-repeat: no-repeat;
   background-position: left center;
   padding-left: 30px;
@@ -10638,14 +10638,14 @@ input.search-header {
   input.search-header::placeholder {
     color: #999; }
   input.search-header:focus {
-    background-image: url("../assets/svg/search-active.svg"); }
+    background-image: url(image_path("svg/search-active.svg")); }
 
 select {
   position: relative;
   -webkit-appearance: none;
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-  background-image: url("../assets/svg/select-background.svg");
+  background-image: url(image_path("svg/select-background.svg"));
   background-repeat: no-repeat;
   background-position: right center; }
 
@@ -10678,7 +10678,7 @@ input[type='checkbox'] {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
     box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25); }
   input[type='checkbox']:checked {
-    background-image: url("../assets/svg/checkmark.svg");
+    background-image: url(image_path("svg/checkmark.svg"));
     background-position: center center;
     background-repeat: no-repeat;
     background-color: #4A90E2;
@@ -10712,7 +10712,7 @@ input[type='radio'] {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
     box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25); }
   input[type='radio']:checked {
-    background-image: url("../assets/svg/radio.svg");
+    background-image: url(image_path("svg/radio.svg"));
     background-position: center center;
     background-repeat: no-repeat;
     background-color: #4A90E2;
@@ -10727,7 +10727,7 @@ input[type='radio'] {
   background: -webkit-linear-gradient(#F6F7F9 0%, #FFFFFF 100%);
   background: -o-linear-gradient(#F6F7F9 0%, #FFFFFF 100%);
   background: linear-gradient(#F6F7F9 0%, #FFFFFF 100%);
-  background-image: url("../assets/svg/arrow-down.svg");
+  background-image: url(image_path("svg/arrow-down.svg"));
   background-repeat: no-repeat;
   background-position: right 14px top 13px;
   -webkit-background-size: 9px 9px;
@@ -10953,7 +10953,7 @@ input#colorpicker-description {
   float: none !important;
   font-size: 0 !important;
   height: auto !important;
-  content: url("../assets/svg/arrow-down-big.svg");
+  content: url(image_path("svg/arrow-down-big.svg"));
   padding: 0 4px 0 8px !important;
   margin-top: 3px; }
 

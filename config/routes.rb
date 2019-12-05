@@ -174,6 +174,9 @@ Rails.application.routes.draw do
 
     namespace :admin2 do
       resources :dashboard, only: :index
+      namespace :general do
+        resources :essentials, only: %i[index]
+      end
     end
 
     namespace :admin do
