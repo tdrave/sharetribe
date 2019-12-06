@@ -1,5 +1,6 @@
 en:
   admin2:
+    save_changes: 'Save changes'
     topnav:
       logo: 'Sharetribe Go Admin Panel'
       menu: 'Menu'
@@ -11,6 +12,11 @@ en:
       general_group: 'General'
       general:
         essentials: 'Essentials'
+        privacy: 'Privacy'
+    privacy:
+      private_marketplace: 'Private marketplace'
+      header: 'Private marketplace landing page content'
+      info_text: 'This content is shown on the homepage of private marketplaces to users who are not logged in. Here you can describe your marketplace and the process to join it'
     seo:
       title: '%{title} | %{service_name} Go Admin panel'
       description: 'Manage the %{title} settings of your %{service_name} Sharetribe Go marketplace'

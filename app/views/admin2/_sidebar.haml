@@ -18,8 +18,9 @@
 
         %li#domain
           %a{:href => 'domain.php'} Domain
-        %li#privacy
-          %a{:href => 'privacy.php'} Privacy
+        %li#privacy{class: active_li('privacy')}
+          = link_to t('admin2.sidebar.general.privacy'), admin2_general_privacy_index_path
+
         %li#staticcontent-mobile
           %a{:href => 'static-content.php'} Static content
         %li#adminnotifications-mobile

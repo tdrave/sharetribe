@@ -37,6 +37,17 @@ module CommunitiesHelper
     }
   end
 
+  def community_private_homepage_content_locals
+    translations = find_community_customizations(:private_community_homepage_content)
+    {
+      header: t('admin2.privacy.header'),
+      input_classes: "form-control",
+      info_text: t('admin2.privacy.info_text'),
+      input_name: 'private_community_homepage_content',
+      translations: translations
+    }
+  end
+
   def community_search_placeholder_locals
     translations = find_community_customizations(:search_placeholder)
     {
@@ -74,7 +85,7 @@ module CommunitiesHelper
   def find_community_customizations(customization_key)
     available_locales.inject({}) do |translations, (locale_name, locale_value)|
       translation = @community_customizations[locale_value][customization_key] || ""
-      translations[locale_value] = {language: locale_name, translation: translation};
+      translations[locale_value] = {language: locale_name, translation: translation}
       translations
     end
   end

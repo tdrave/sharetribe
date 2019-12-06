@@ -176,6 +176,11 @@ Rails.application.routes.draw do
       resources :dashboard, only: :index
       namespace :general do
         resources :essentials, only: %i[index]
+        resources :privacy, only: %i[index] do
+          collection do
+            patch :update_privacy
+          end
+        end
       end
     end
 

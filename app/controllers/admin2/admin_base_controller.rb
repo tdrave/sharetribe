@@ -13,4 +13,15 @@ class Admin2::AdminBaseController < ApplicationController
   def setup_seo_service
     @seo_service = SeoService.new(@current_community, params)
   end
+
+  def find_or_initialize_customizations_for_locale(locale)
+    @current_community.community_customizations.find_by_locale(locale) || build_customization_with_defaults(locale)
+  end
+
+  def find_or_initialize_customizations(locales)
+    locales.inject({}) do |customizations, locale|
+      customizations[locale] = find_or_initialize_customizations_for_locale(locale)
+      customizations
+    end
+  end
 end

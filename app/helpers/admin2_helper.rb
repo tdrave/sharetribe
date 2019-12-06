@@ -10,7 +10,7 @@ module Admin2Helper
 
   def expand_rules
     {
-      general: %w[essentials]
+      general: %w[essentials privacy]
     }
   end
 
