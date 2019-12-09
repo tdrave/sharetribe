@@ -23,8 +23,8 @@ module Admin2::General
     def update_privacy_translations
       analytic = AnalyticService::CommunityCustomizations.new(user: @current_user, community: @current_community)
       @current_community.locales.map do |locale|
-        permitted_params = %i[private_community_homepage_content]
-        locale_params = params.require(:community_customizations).require(locale).permit(*permitted_params)
+        locale_params = params.require(:community_customizations).require(locale)
+                              .permit(:private_community_homepage_content)
         customizations = find_or_initialize_customizations_for_locale(locale)
         customizations.assign_attributes(locale_params)
         analytic.process(customizations)
