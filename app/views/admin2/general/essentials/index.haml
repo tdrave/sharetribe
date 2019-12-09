@@ -5,98 +5,110 @@
   %h1.content-card-header-title Essentials
   %a.content-card-header-link{:href => "#", :target => "_blank"} Preview your Marketplace
 .content-card-section-container
+  -#%section.content-card-section
+  -#  %h2 Basic marketplace details
+  -#  %form.content-card-section-form
+  -#
+  -#    .form-group
+  -#      %label{:for => "marketplaceName"} Marketplace name
+  -#      %input#marketplaceName.form-control{"aria-describedby" => "marketplaceName", :placeholder => "Marketplace name...", :type => "text", :value => "Bikerrrs"}/
+  -#
+  -#    .form-group
+  -#      %label{:for => "marketplaceSlogan"} Marketplace slogan &amp; color
+  -#      .d-flex
+  -#        %input#marketplaceSlogan.form-control{"aria-describedby" => "marketplaceSlogan", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace slogan...", :style => "padding-right: 86px", :type => "text", :value => "Bike to the sunset with Bikerrrs"}/
+  -#        %input#colorpicker-slogan{"aria-describedby" => "colorpicker-slogan", "aria-label" => "Marketplace slogan color"}/
+  -#        / Inline style for input because of the colorpicker element
+  -#
+  -#      %small#marketplaceSlogan-help.form-text Slogan is shown in browsers, search engines and social media.
+  -#      .form-check
+  -#        %input#marketplaceSloganCheck.form-check-input{:checked => "checked", :type => "checkbox"}/
+  -#        %label.form-check-label{:for => "marketplaceSloganCheck"} Display the slogan in the homepage for users who are not logged in
+  -#
+  -#    .form-group
+  -#      %label{:for => "marketplaceDescription"} Marketplace description &amp; color
+  -#      .d-flex
+  -#        %input#marketplaceDescription.form-control{"aria-describedby" => "marketplaceDescription", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace description…", :style => "padding-right: 86px", :type => "text"}/
+  -#        %input#colorpicker-description{"aria-describedby" => "colorpicker-description", "aria-label" => "Marketplace description color"}/
+  -#        / Inline style for input because of the colorpicker element
+  -#      %small#marketplaceDescription-help.form-text Description is shown in browsers, search engines and social media.
+  -#      .form-check
+  -#        %input#marketplaceDescriptionCheck.form-check-input{:type => "checkbox"}/
+  -#        %label.form-check-label{:for => "marketplaceDescriptionCheck"} Display the description in the homepage for users who are not logged in
+  -#
+  -#    .form-group
+  -#      %label{:for => "marketplaceLanguage"} Marketplace languages
+  -#      %input#marketplaceLanguage.form-control{"aria-describedby" => "marketplaceName", :placeholder => "Marketplace Languages", :type => "text", :value => "English"}/
+  -#      %small#marketplaceLanguage-help.form-text English is used as default in the marketplace.
+
+
   %section.content-card-section
     %h2 Basic marketplace details
-    %form.content-card-section-form
-      .form-group
-        %label{:for => "marketplaceName"} Marketplace name
-        %input#marketplaceName.form-control{"aria-describedby" => "marketplaceName", :placeholder => "Marketplace name...", :type => "text", :value => "Bikerrrs"}/
-      .form-group
-        %label{:for => "marketplaceSlogan"} Marketplace slogan &amp; color
-        .d-flex
-          %input#marketplaceSlogan.form-control{"aria-describedby" => "marketplaceSlogan", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace slogan...", :style => "padding-right: 86px", :type => "text", :value => "Bike to the sunset with Bikerrrs"}/
-          %input#colorpicker-slogan{"aria-describedby" => "colorpicker-slogan", "aria-label" => "Marketplace slogan color"}/
-          / Inline style for input because of the colorpicker element
-        %small#marketplaceSlogan-help.form-text Slogan is shown in browsers, search engines and social media.
-        .form-check
-          %input#marketplaceSloganCheck.form-check-input{:checked => "checked", :type => "checkbox"}/
-          %label.form-check-label{:for => "marketplaceSloganCheck"} Display the slogan in the homepage for users who are not logged in
-      .form-group
-        %label{:for => "marketplaceDescription"} Marketplace description &amp; color
-        .d-flex
-          %input#marketplaceDescription.form-control{"aria-describedby" => "marketplaceDescription", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace description…", :style => "padding-right: 86px", :type => "text"}/
-          %input#colorpicker-description{"aria-describedby" => "colorpicker-description", "aria-label" => "Marketplace description color"}/
-          / Inline style for input because of the colorpicker element
-        %small#marketplaceDescription-help.form-text Description is shown in browsers, search engines and social media.
-        .form-check
-          %input#marketplaceDescriptionCheck.form-check-input{:type => "checkbox"}/
-          %label.form-check-label{:for => "marketplaceDescriptionCheck"} Display the description in the homepage for users who are not logged in
-      .form-group
-        %label{:for => "marketplaceLanguage"} Marketplace languages
-        %input#marketplaceLanguage.form-control{"aria-describedby" => "marketplaceName", :placeholder => "Marketplace Languages", :type => "text", :value => "English"}/
-        %small#marketplaceLanguage-help.form-text English is used as default in the marketplace.
+    = form_for @current_community, url: update_privacy_admin2_general_privacy_index_path, class: %i[content-card-section-form], method: :patch do |form|
+      = render partial: "admin2/general/essentials/locale_input_fields", locals: community_essentials_hash
+      = render partial: "admin2/general/essentials/locale_input_fields", locals: community_slogan_hash
+      = render partial: "admin2/general/essentials/locale_input_fields", locals: community_description_hash
+      = render partial: "admin2/general/essentials/locale_selection",    locals: locale_selection_locals
+      -#.form-group
+      -#  %label{:for => "marketplaceName"} Marketplace name
+      -#  %small#marketplaceName-help.form-text-above Name is shown to users in emails and various other places.
+      -#  .d-flex.multiple-languages
+      -#    %span.language English
+      -#    %input#marketplaceName.form-control{"aria-describedby" => "marketplaceName", :placeholder => "Marketplace name...", :type => "text", :value => "Bikerrrs"}/
+      -#  .d-flex.multiple-languages
+      -#    %span.language French
+      -#    %input#marketplaceName.form-control{"aria-describedby" => "marketplaceName", :placeholder => "Marketplace name...", :type => "text", :value => "Bikerrrs"}/
+      -#  .d-flex.multiple-languages
+      -#    %span.language Spanish
+      -#    %input#marketplaceName.form-control{"aria-describedby" => "marketplaceName", :placeholder => "Marketplace name...", :type => "text", :value => "Bikerrrs"}/
+      -#
+      -#.form-group
+      -#  %label{:for => "marketplaceSlogan"} Marketplace slogan &amp; color
+      -#  %small#marketplaceSlogan-help.form-text-above Slogan is shown in browsers, search engines and social media.
+      -#  .d-flex.multiple-languages
+      -#    %span.language English
+      -#    %input#marketplaceSlogan.form-control{"aria-describedby" => "marketplaceSlogan", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace slogan...", :type => "text", :value => "Bike to the sunset with Bikerrrs"}/
+      -#  .d-flex.multiple-languages
+      -#    %span.language French
+      -#    %input#marketplaceSlogan.form-control{"aria-describedby" => "marketplaceSlogan", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace slogan...", :type => "text", :value => "Bike to the sunset with Bikerrrs"}/
+      -#  .d-flex.multiple-languages
+      -#    %span.language Spanish
+      -#    %input#marketplaceSlogan.form-control{"aria-describedby" => "marketplaceSlogan", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace slogan...", :type => "text", :value => "Bike to the sunset with Bikerrrs"}/
+      -#  .d-flex.multiple-languages
+      -#    %span.color Color
+      -#    %input#colorpicker-description{"aria-describedby" => "colorpicker-description", "aria-label" => "Marketplace description color"}/
+      -#    / Inline style for input because of the colorpicker element
+      -#  .form-check-multiple-languages
+      -#    %input#marketplaceSloganCheck.form-check-input{:checked => "checked", :type => "checkbox"}/
+      -#    %label.form-check-label{:for => "marketplaceSloganCheck"} Display the slogan in the homepage for users who are not logged in
+      -#
+      -#.form-group
+      -#  %label{:for => "marketplaceSlogan"} Marketplace description &amp; color
+      -#  %small#marketplaceSlogan-help.form-text-above Description is shown in browsers, search engines and social media.
+      -#  .d-flex.multiple-languages
+      -#    %span.language English
+      -#    %input#marketplaceDescription.form-control{"aria-describedby" => "marketplaceDescription", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace description…", :type => "text"}/
+      -#  .d-flex.multiple-languages
+      -#    %span.language French
+      -#    %input#marketplaceDescription.form-control{"aria-describedby" => "marketplaceDescription", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace description…", :type => "text"}/
+      -#  .d-flex.multiple-languages
+      -#    %span.language Spanish
+      -#    %input#marketplaceDescription.form-control{"aria-describedby" => "marketplaceDescription", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace description…", :type => "text"}/
+      -#  .d-flex.multiple-languages
+      -#    %span.color Color
+      -#    %input#colorpicker-description{"aria-describedby" => "colorpicker-description", "aria-label" => "Marketplace description color"}/
+      -#    / Inline style for input because of the colorpicker element
+      -#  .form-check-multiple-languages
+      -#    %input#marketplaceSloganCheck.form-check-input{:checked => "checked", :type => "checkbox"}/
+      -#    %label.form-check-label{:for => "marketplaceSloganCheck"} Display the description in the homepage for users who are not logged in
 
+      -#.form-group
+      -#  %label{:for => "marketplaceLanguage"} Marketplace languages
+      -#  %input#marketplaceLanguage.form-control{"aria-describedby" => "marketplaceName", :placeholder => "Marketplace Languages", :type => "text", :value => "English"}/
+      -#  %small#marketplaceLanguage-help.form-text English is used as default in the marketplace.
 
-  %section.content-card-section
-    %h2 Basic marketplace details (Variation: Multiple languages)
-    %form.content-card-section-form
-      .form-group
-        %label{:for => "marketplaceName"} Marketplace name
-        %small#marketplaceName-help.form-text-above Name is shown to users in emails and various other places.
-        .d-flex.multiple-languages
-          %span.language English
-          %input#marketplaceName.form-control{"aria-describedby" => "marketplaceName", :placeholder => "Marketplace name...", :type => "text", :value => "Bikerrrs"}/
-        .d-flex.multiple-languages
-          %span.language French
-          %input#marketplaceName.form-control{"aria-describedby" => "marketplaceName", :placeholder => "Marketplace name...", :type => "text", :value => "Bikerrrs"}/
-        .d-flex.multiple-languages
-          %span.language Spanish
-          %input#marketplaceName.form-control{"aria-describedby" => "marketplaceName", :placeholder => "Marketplace name...", :type => "text", :value => "Bikerrrs"}/
-      .form-group
-        %label{:for => "marketplaceSlogan"} Marketplace slogan &amp; color
-        %small#marketplaceSlogan-help.form-text-above Slogan is shown in browsers, search engines and social media.
-        .d-flex.multiple-languages
-          %span.language English
-          %input#marketplaceSlogan.form-control{"aria-describedby" => "marketplaceSlogan", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace slogan...", :type => "text", :value => "Bike to the sunset with Bikerrrs"}/
-        .d-flex.multiple-languages
-          %span.language French
-          %input#marketplaceSlogan.form-control{"aria-describedby" => "marketplaceSlogan", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace slogan...", :type => "text", :value => "Bike to the sunset with Bikerrrs"}/
-        .d-flex.multiple-languages
-          %span.language Spanish
-          %input#marketplaceSlogan.form-control{"aria-describedby" => "marketplaceSlogan", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace slogan...", :type => "text", :value => "Bike to the sunset with Bikerrrs"}/
-        .d-flex.multiple-languages
-          %span.color Color
-          %input#colorpicker-description{"aria-describedby" => "colorpicker-description", "aria-label" => "Marketplace description color"}/
-          / Inline style for input because of the colorpicker element
-        .form-check-multiple-languages
-          %input#marketplaceSloganCheck.form-check-input{:checked => "checked", :type => "checkbox"}/
-          %label.form-check-label{:for => "marketplaceSloganCheck"} Display the slogan in the homepage for users who are not logged in
-      .form-group
-        %label{:for => "marketplaceSlogan"} Marketplace description &amp; color
-        %small#marketplaceSlogan-help.form-text-above Description is shown in browsers, search engines and social media.
-        .d-flex.multiple-languages
-          %span.language English
-          %input#marketplaceDescription.form-control{"aria-describedby" => "marketplaceDescription", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace description…", :type => "text"}/
-        .d-flex.multiple-languages
-          %span.language French
-          %input#marketplaceDescription.form-control{"aria-describedby" => "marketplaceDescription", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace description…", :type => "text"}/
-        .d-flex.multiple-languages
-          %span.language Spanish
-          %input#marketplaceDescription.form-control{"aria-describedby" => "marketplaceDescription", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace description…", :type => "text"}/
-        .d-flex.multiple-languages
-          %span.color Color
-          %input#colorpicker-description{"aria-describedby" => "colorpicker-description", "aria-label" => "Marketplace description color"}/
-          / Inline style for input because of the colorpicker element
-        .form-check-multiple-languages
-          %input#marketplaceSloganCheck.form-check-input{:checked => "checked", :type => "checkbox"}/
-          %label.form-check-label{:for => "marketplaceSloganCheck"} Display the description in the homepage for users who are not logged in
-      .form-group
-        %label{:for => "marketplaceLanguage"} Marketplace languages
-        %input#marketplaceLanguage.form-control{"aria-describedby" => "marketplaceName", :placeholder => "Marketplace Languages", :type => "text", :value => "English"}/
-        %small#marketplaceLanguage-help.form-text English is used as default in the marketplace.
-
-.content-card-terminal
-  %a.btn.btn-primary{:href => "#"} Save changes
+      .content-card-terminal
+        = button_tag t('admin2.save_changes'), class: %i[btn btn-primary]
 
 :javascript
   jQuery(function(){

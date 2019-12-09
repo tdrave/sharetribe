@@ -5,3 +5,4 @@
 //= require admin2/gap
 //= require admin2/spectrum
 //= require admin2/custom
+//= require select2

@@ -37,17 +37,6 @@ module CommunitiesHelper
     }
   end
 
-  def community_private_homepage_content_locals
-    translations = find_community_customizations(:private_community_homepage_content)
-    {
-      header: t('admin2.privacy.header'),
-      input_classes: "form-control",
-      info_text: t('admin2.privacy.info_text'),
-      input_name: 'private_community_homepage_content',
-      translations: translations
-    }
-  end
-
   def community_search_placeholder_locals
     translations = find_community_customizations(:search_placeholder)
     {

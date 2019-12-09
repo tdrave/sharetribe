@@ -16,6 +16,6 @@
           = form.check_box :private, class: %i[form-check-input private-check]
           = form.label :private, t('admin.communities.settings.private'), class: %i[form-check-label]
     %section.content-card-section.private-check-content{class: form.object.private ? '' : :opacity_04}
-      = render partial: 'admin2/locale_input_fields', locals: community_private_homepage_content_locals
+      = render partial: 'admin2/locale_input_fields', locals: community_private_homepage_content
     .content-card-terminal
       = button_tag t('admin2.save_changes'), class: %i[btn btn-primary]

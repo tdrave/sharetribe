@@ -1,0 +1,11 @@
+.form-group
+  %label Marketplace languages
+  = select_tag 'enabled_locales[]', options_for_select(all_locales.map{|l| [l[:translated_name], l[:locale_key]]}, enabled_locale_keys), multiple: true, class: 'form-control required', required: true
+  -#%input#marketplaceLanguage.form-control{"aria-describedby" => "marketplaceName", :placeholder => "Marketplace Languages", :type => "text", :value => "English"}/
+  %small#marketplaceLanguage-help.form-text English is used as default in the marketplace.
+
+- content_for :extra_javascript do
+  :javascript
+    $("#enabled_locales_").select2({
+       theme: "bootstrap"
+    });
