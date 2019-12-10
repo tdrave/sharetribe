@@ -16,6 +16,7 @@ en:
     privacy:
       private_marketplace: 'Private marketplace'
       header: 'Private marketplace landing page content'
+      private: 'Allow only registered users to see listings and user profiles (make marketplace private)'
       info_text: 'This content is shown on the homepage of private marketplaces to users who are not logged in. Here you can describe your marketplace and the process to join it'
     essentials:
       header_link: 'Preview your Marketplace'
@@ -31,6 +32,10 @@ en:
       color: 'Color'
       show_slogan: 'Display the slogan in the homepage for users who are not logged in'
       show_description: 'Display the description in the homepage for users who are not logged in'
+    notifications:
+      privacy_updated: 'Privacy settings were updated'
+      essentials_updated: 'Basic marketplace details were updated'
+      essentials_update_failed: 'Basic marketplace details update failed'
     seo:
       title: '%{title} | %{service_name} Go Admin panel'
       description: 'Manage the %{title} settings of your %{service_name} Sharetribe Go marketplace'

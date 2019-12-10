@@ -17,12 +17,11 @@ module Admin2::General
     def update_essential
       update_results = []
       analytic = AnalyticService::CommunityCustomizations.new(user: @current_user, community: @current_community)
-      customizations = @current_community.locales.map do |locale|
+      @current_community.locales.map do |locale|
         customizations = find_or_initialize_customizations_for_locale(locale)
         customizations.assign_attributes(community_custom_params(locale))
         analytic.process(customizations)
         update_results.push(customizations.update({}))
-        customizations
       end
       update_results.push(@current_community.update(community_params))
       process_locales = unofficial_locales.blank?
@@ -34,20 +33,15 @@ module Admin2::General
           MarketplaceService.set_locales(@current_community, enabled_locales)
         end
       end
-
       analytic.send_properties
       if update_results.all? && (!process_locales || enabled_locales_valid)
-        # Onboarding wizard step recording
-        state_changed = Admin::OnboardingWizard.new(@current_community.id)
-                                                .update_from_event(:community_customizations_updated, customizations)
-        if state_changed
-          record_event(flash, 'km_record', { km_event: 'Onboarding slogan/description created' })
-          flash[:show_onboarding_popup] = true
-        end
-        flash[:notice] = t("layouts.notifications.community_updated")
+        flash[:notice] = t('admin2.notifications.essentials_updated')
       else
-        flash[:error] = t("layouts.notifications.community_update_failed")
+        raise t('admin2.notifications.essentials_update_failed')
       end
+    rescue StandardError => e
+      flash[:error] = e.message
+    ensure
       redirect_to admin2_general_essentials_path
     end
 
@@ -67,16 +61,12 @@ module Admin2::General
                                         :show_description)
     end
 
-    def has_preauthorize_process?(processes)
-      processes.any? { |p| p.process == :preauthorize }
-    end
-
     def unofficial_locales
       all_locales = MarketplaceService.all_locales.map { |l| l[:locale_key] }
-      @current_community.locales.select { |locale| !all_locales.include?(locale) }
+      @current_community.locales.reject { |locale| all_locales.include?(locale) }
                         .map { |unsupported_locale_key|
-                          unsupported_locale_name = Sharetribe::AVAILABLE_LOCALES.select { |l| l[:ident] == unsupported_locale_key }.map { |l| l[:name] }.first
-                          { key: unsupported_locale_key, name: unsupported_locale_name }
+                           unsupported_locale_name = Sharetribe::AVAILABLE_LOCALES.select { |l| l[:ident] == unsupported_locale_key }.map { |l| l[:name] }.first
+                           { key: unsupported_locale_key, name: unsupported_locale_name }
                         }
     end
   end

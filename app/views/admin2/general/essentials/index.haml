@@ -4,7 +4,7 @@
 .content-card-header
   %h1.content-card-header-title
     = t('admin2.sidebar.general.essentials')
-  = link_to t('admin2.essentials.header_link'), homepage_with_locale_path, class: %i[content-card-header-link], target: :_blank
+  = link_to t('admin2.essentials.header_link'), homepage_without_locale_path(big_cover_photo: true, locale: nil), class: %i[content-card-header-link], target: :_blank
 
 .content-card-section-container
   %section.content-card-section

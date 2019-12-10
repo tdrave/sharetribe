@@ -8,8 +8,9 @@ module Admin2::General
     def update_privacy
       @current_community.update!(privacy_params)
       update_privacy_translations
+      flash[:notice] = t('admin2.notifications.privacy_updated')
     rescue StandardError => e
-      flash[:error] = t("layouts.notifications.community_update_failed")
+      flash[:error] = e.message
     ensure
       redirect_to admin2_general_privacy_index_path
     end
