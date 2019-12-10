@@ -42,9 +42,9 @@ module Admin2Helper
   def community_essentials_hash
     translations = find_community_customizations(:name)
     {
-      header: t("admin.communities.edit_details.community_name"),
+      header: t('admin2.essentials.community_name'),
       input_classes: 'form-control',
-      info_text: I18n.t("admin.communities.edit_details.edit_community_name_description"),
+      info_text: t('admin2.essentials.community_info_text'),
       input_name: 'name',
       translations: translations
     }
@@ -52,26 +52,22 @@ module Admin2Helper
 
   def community_slogan_hash
     translations = find_community_customizations(:slogan)
-    looks_link = link_to(t("admin.communities.edit_details.see_how_it_looks_like"), "/?big_cover_photo=true", id: "view_slogan_link", target: :_blank, rel: :noopener)
-    info_text = I18n.t("admin.communities.edit_details.edit_community_slogan_description_hideable", :see_how_it_looks_like => looks_link)
     {
-      header: t("admin.communities.edit_details.community_slogan"),
+      header: t('admin2.essentials.community_slogan'),
       input_classes: 'form-control',
-      info_text: info_text,
-      input_name: "slogan",
+      info_text: t('admin2.essentials.community_slogan_info_text'),
+      input_name: 'slogan',
       translations: translations
     }
   end
 
   def community_description_hash
     translations = find_community_customizations(:description)
-    looks_link = link_to(t("admin.communities.edit_details.see_how_it_looks_like"), "/?big_cover_photo=true", target: :_blank, rel: :noopener)
-    info_text = I18n.t("admin.communities.edit_details.edit_community_description_description_hideable", :see_how_it_looks_like => looks_link)
     {
-      header: t("admin.communities.edit_details.community_description"),
+      header: t('admin2.essentials.community_description'),
       input_classes: 'form-control',
-      info_text: info_text,
-      input_name: "description",
+      info_text: t('admin2.essentials.community_description_info_text'),
+      input_name: 'description',
       translations: translations
     }
   end

@@ -1,8 +1,8 @@
 - multi_language = translations.count > 1
-.form-group
-  %label
-    = header
-  - if multi_language
+- if multi_language
+  .form-group
+    %label
+      = header
     %small.form-text-above
       = info_text.html_safe
 
@@ -10,33 +10,67 @@
       .d-flex.multiple-languages
         %span.language
           = value[:language]
-        = text_field_tag "community_customizations[#{language_key}][#{input_name}]", value[:translation], class: input_classes, maxlength: defined?(maxlength) ? maxlength : nil, placeholder: defined?(placeholder) ? placeholder : ''
+        = text_field_tag "community_customizations[#{language_key}][#{input_name}]", value[:translation],
+          class: input_classes, maxlength: defined?(maxlength) ? maxlength : nil, placeholder: defined?(placeholder) ? placeholder : ''
 
-  - else
+    - if input_name == 'slogan'
+      .d-flex.multiple-languages
+        %span.color= t('admin2.essentials.color')
+        = text_field_tag "community[slogan_color]", @current_community.slogan_color_string, id: 'colorpicker-slogan'
+      .form-check-multiple-languages
+        = hidden_field_tag 'community[show_slogan]', 0, id: 'hidden_community_show_slogan'
+        = check_box_tag "community[show_slogan]", 1, @current_community.show_slogan?, class: %i[form-check-input]
+        = label_tag "community_show_slogan", t('admin2.essentials.show_slogan'), class: %i[form-check-label]
 
-    .form-group
-      %label{:for => "marketplaceName"} Marketplace name
-      %input#marketplaceName.form-control{"aria-describedby" => "marketplaceName", :placeholder => "Marketplace name...", :type => "text", :value => "Bikerrrs"}/
+    - if input_name == 'description'
+      .d-flex.multiple-languages
+        %span.color= t('admin2.essentials.color')
+        = text_field_tag "community[description_color]", @current_community.description_color_string, id: 'colorpicker-description'
+      .form-check-multiple-languages
+        = hidden_field_tag 'community[show_description]', 0, id: 'hidden_community_show_description'
+        = check_box_tag "community[show_description]", 1, @current_community.show_description?, class: %i[form-check-input]
+        = label_tag "community_show_description", t('admin2.essentials.show_description'), class: %i[form-check-label]
 
-    .form-group
-      %label{:for => "marketplaceSlogan"} Marketplace slogan &amp; color
+- else
+
+  - language_key = translations.keys.first
+  - value = translations[translations.keys.first]
+
+  .form-group
+    - if input_name == 'name'
+      %label
+        = header
+      = text_field_tag "community_customizations[#{language_key}][#{input_name}]", value[:translation],
+        class: input_classes, maxlength: defined?(maxlength) ? maxlength : nil, placeholder: defined?(placeholder) ? placeholder : ''
+      %small.form-text
+        = info_text.html_safe
+
+    - if input_name == 'slogan'
+      %label
+        = header
       .d-flex
-        %input#marketplaceSlogan.form-control{"aria-describedby" => "marketplaceSlogan", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace slogan...", :style => "padding-right: 86px", :type => "text", :value => "Bike to the sunset with Bikerrrs"}/
-        %input#colorpicker-slogan{"aria-describedby" => "colorpicker-slogan", "aria-label" => "Marketplace slogan color"}/
-        / Inline style for input because of the colorpicker element
+        = text_field_tag "community_customizations[#{language_key}][#{input_name}]", value[:translation],
+          class: input_classes, maxlength: defined?(maxlength) ? maxlength : nil, placeholder: defined?(placeholder) ? placeholder : '', style: 'padding-right: 86px'
+        = text_field_tag "community[slogan_color]", @current_community.slogan_color_string, id: 'colorpicker-slogan'
 
-      %small#marketplaceSlogan-help.form-text Slogan is shown in browsers, search engines and social media.
+      %small.form-text
+        = info_text.html_safe
       .form-check
-        %input#marketplaceSloganCheck.form-check-input{:checked => "checked", :type => "checkbox"}/
-        %label.form-check-label{:for => "marketplaceSloganCheck"} Display the slogan in the homepage for users who are not logged in
+        = hidden_field_tag 'community[show_slogan]', 0, id: 'hidden_community_show_slogan'
+        = check_box_tag "community[show_slogan]", 1, @current_community.show_slogan?, class: %i[form-check-input]
+        = label_tag "community_show_slogan", t('admin2.essentials.show_slogan'), class: %i[form-check-label]
 
-    .form-group
-      %label{:for => "marketplaceDescription"} Marketplace description &amp; color
+    - if input_name == 'description'
+      %label
+        = header
       .d-flex
-        %input#marketplaceDescription.form-control{"aria-describedby" => "marketplaceDescription", "aria-label" => "Marketplace slogan", :placeholder => "Marketplace description…", :style => "padding-right: 86px", :type => "text"}/
-        %input#colorpicker-description{"aria-describedby" => "colorpicker-description", "aria-label" => "Marketplace description color"}/
-        / Inline style for input because of the colorpicker element
-      %small#marketplaceDescription-help.form-text Description is shown in browsers, search engines and social media.
+        = text_field_tag "community_customizations[#{language_key}][#{input_name}]", value[:translation],
+          class: input_classes, maxlength: defined?(maxlength) ? maxlength : nil, placeholder: defined?(placeholder) ? placeholder : '', style: 'padding-right: 86px'
+        = text_field_tag "community[description_color]", @current_community.description_color_string, id: 'colorpicker-description'
+
+      %small.form-text
+        = info_text.html_safe
       .form-check
-        %input#marketplaceDescriptionCheck.form-check-input{:type => "checkbox"}/
-        %label.form-check-label{:for => "marketplaceDescriptionCheck"} Display the description in the homepage for users who are not logged in
+        = hidden_field_tag 'community[show_description]', 0, id: 'hidden_community_show_description'
+        = check_box_tag "community[show_description]", 1, @current_community.show_description?, class: %i[form-check-input]
+        = label_tag "community_show_description", t('admin2.essentials.show_description'), class: %i[form-check-label]
