@@ -185,6 +185,7 @@ Rails.application.routes.draw do
             patch :update_admin_notifications
           end
         end
+        resources :static_content, only: %i[index]
         resources :privacy, only: %i[index] do
           collection do
             patch :update_privacy

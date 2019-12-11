@@ -14,6 +14,7 @@ en:
       general:
         essentials: 'Essentials'
         privacy: 'Privacy'
+        static_content: 'Static content'
         admin_notifications: 'Admin notifications'
     privacy:
       private_marketplace: 'Private marketplace'
@@ -39,6 +40,14 @@ en:
       info_text: "To monitor what's happening on your marketplace website, you can be notified of any new activity. Email notifications are sent to all confirmed emails of all admins."
       email_admins_about_new_members: 'Send admins an email whenever a new user signs up'
       email_admins_about_new_transactions: 'Send admins an email whenever a new transaction starts'
+    static_content:
+      header: 'Static content pages'
+      info_text: 'You can edit up to four pages of static content. Users can find the pages by clicking the "About" link in the top bar.'
+      about: 'About'
+      how_it_works: 'How it works'
+      privacy_policy: 'Privacy policy'
+      terms_of_use: 'Terms of use'
+      edit: 'Edit'
     notifications:
       privacy_updated: 'Privacy settings were updated'
       essentials_updated: 'Basic marketplace details were updated'
