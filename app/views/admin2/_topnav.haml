@@ -12,7 +12,8 @@
     .nav-item
       = link_to homepage_with_locale_path, class: %i[nav-link] do
         %span.hide-mobile
-          = t('admin2.topnav.goto_marketplace')
+          = t('admin2.topnav.go_to_your')
+        = t('admin2.topnav.marketplace')
           
     = render partial: 'admin2/locals', locals: header_props
 

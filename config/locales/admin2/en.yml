@@ -4,7 +4,8 @@ en:
     topnav:
       logo: 'Sharetribe Go Admin Panel'
       menu: 'Menu'
-      goto_marketplace: 'Go to your Marketplace'
+      go_to_your: 'Go to your'
+      marketplace: 'Marketplace'
       avatar: 'Sharetribe Go Admin'
       logout: 'Log out'
     sidebar:
