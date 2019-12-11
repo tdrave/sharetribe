@@ -11,7 +11,7 @@ module Admin2Helper
   def expand_rules
     {
       general: %w[essentials privacy static_content admin_notifications],
-      design: %w[landing_page]
+      design: %w[landing_page display]
     }
   end
 

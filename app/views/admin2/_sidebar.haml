@@ -10,8 +10,7 @@
       / General
       %ul.category-title
         %li
-          %a.dropdown-toggle{'aria-controls' => 'general', 'aria-expanded' => 'false', 'data-toggle' => 'collapse', href: '#general', role: :button}
-            = t('admin2.sidebar.general_group')
+          = link_to t('admin2.sidebar.general_group'), '#general', class: %i[dropdown-toggle], 'aria-controls' => 'general', 'aria-expanded' => 'false', 'data-toggle' => 'collapse', role: :button
       %ul#general.collapse.subtitle{class: expand_ul('general')}
         %li#essentials{class: active_li('essentials')}
           = link_to t('admin2.sidebar.general.essentials'), admin2_general_essentials_path
@@ -27,7 +26,7 @@
       / Design
       %ul.category-title
         %li
-          %a.dropdown-toggle{'aria-controls' => 'design', 'aria-expanded' => 'false', 'data-toggle' => 'collapse', :href => '#design', :role => 'button'} Design
+          = link_to t('admin2.sidebar.design_group'), '#design', class: %i[dropdown-toggle], 'aria-controls' => 'design', 'aria-expanded' => 'false', 'data-toggle' => 'collapse', role: :button
       %ul#design.collapse.subtitle{class: expand_ul('design')}
         %li#logoscolor
           %a{:href => 'logos-color.php'} Logos &amp; Color
@@ -39,8 +38,8 @@
           %a{:href => 'top-bar.php'} Top bar
         %li#footer
           %a{:href => 'footer.php'} Footer
-        %li#display
-          %a{:href => 'display.php'} Display
+        %li#display{class: active_li('display')}
+          = link_to t('admin2.sidebar.design.display'), admin2_design_display_index_path
         %li#experimental
           %a{:href => 'experimental.php'} Experimental
       / Divider
@@ -181,4 +180,4 @@
       %li
         %a{:href => 'https://www.sharetribe.com/academy/guide/?utm_source=marketplaceadminpanel&utm_medium=referral&utm_campaign=leftnavi', :rel => 'noopener', :target => '_blank'} Marketplace Guide
       %li
-        %a{:href => 'https://www.sharetribe.com/updates.html?utm_source=marketplaceadminpanel&utm_medium=referral&utm_campaign=leftnavi', :rel => 'noopener', :target => '_blank'} What's new?
+        %a{:href => 'https://www.sharetribe.com/products/go/updates?utm_source=marketplaceadminpanel&utm_medium=referral&utm_campaign=leftnavi', :rel => 'noopener', :target => '_blank'} What's new?

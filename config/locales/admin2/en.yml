@@ -16,8 +16,10 @@ en:
         privacy: 'Privacy'
         static_content: 'Static content'
         admin_notifications: 'Admin notifications'
+      design_group: 'Design'
       design:
         landing_page: 'Landing page'
+        display: 'Display'
     privacy:
       private_marketplace: 'Private marketplace'
       header: 'Private marketplace landing page content'

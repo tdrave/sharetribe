@@ -194,6 +194,7 @@ Rails.application.routes.draw do
       end
       namespace :design do
         resources :landing_page, path: 'landing-page', only: %i[index]
+        resources :display, only: %i[index]
       end
     end
 
