@@ -10,7 +10,7 @@ module Admin2Helper
 
   def expand_rules
     {
-      general: %w[essentials privacy]
+      general: %w[essentials privacy admin_notifications]
     }
   end
 

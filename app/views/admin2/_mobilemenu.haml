@@ -29,7 +29,7 @@
           %li#staticcontent-mobile
             %a{:href => 'static-content.php'} Static content
           %li#adminnotifications-mobile
-            %a{:href => 'admin-notifications.php'} Admin notifications
+            = link_to t('admin2.sidebar.general.admin_notifications'), admin2_general_admin_notifications_path
         / Design
         %ul.category-title
           %li

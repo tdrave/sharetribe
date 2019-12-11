@@ -180,6 +180,11 @@ Rails.application.routes.draw do
             patch :update_essential
           end
         end
+        resources :admin_notifications, only: %i[index] do
+          collection do
+            patch :update_admin_notifications
+          end
+        end
         resources :privacy, only: %i[index] do
           collection do
             patch :update_privacy

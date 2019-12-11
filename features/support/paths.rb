@@ -48,6 +48,8 @@ module NavigationHelpers
       admin_details_edit_path(locale: "en")
     when /^the admin2 general privacy community "(.*)"$/i
       admin2_general_privacy_index_path(locale: "en")
+    when /^the admin2 general admin notifications community "(.*)"$/i
+      admin2_general_admin_notifications_path(locale: "en")
     when /^the admin2 general essential community "(.*)"$/i
       admin2_general_essentials_path(locale: "en")
     when /^the admin settings view of community "(.*)"$/i
