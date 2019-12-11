@@ -28,13 +28,13 @@
       %ul.category-title
         %li
           %a.dropdown-toggle{'aria-controls' => 'design', 'aria-expanded' => 'false', 'data-toggle' => 'collapse', :href => '#design', :role => 'button'} Design
-      %ul#design.collapse.subtitle
+      %ul#design.collapse.subtitle{class: expand_ul('design')}
         %li#logoscolor
           %a{:href => 'logos-color.php'} Logos &amp; Color
         %li#coverphotos
           %a{:href => 'cover-photos.php'} Cover photos
-        %li#landingpage
-          %a{:href => 'landing-page.php'} Landing page
+        %li#landingpage{class: active_li('landing_page')}
+          = link_to t('admin2.sidebar.design.landing_page'), admin2_design_landing_page_index_path
         %li#topbar
           %a{:href => 'top-bar.php'} Top bar
         %li#footer

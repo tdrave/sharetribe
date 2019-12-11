@@ -16,6 +16,8 @@ en:
         privacy: 'Privacy'
         static_content: 'Static content'
         admin_notifications: 'Admin notifications'
+      design:
+        landing_page: 'Landing page'
     privacy:
       private_marketplace: 'Private marketplace'
       header: 'Private marketplace landing page content'
@@ -48,6 +50,11 @@ en:
       privacy_policy: 'Privacy policy'
       terms_of_use: 'Terms of use'
       edit: 'Edit'
+    landing_page:
+      header: 'Custom Landing Page'
+      info_text_1: 'The landing page is perhaps most important page of your marketplace. It is the first page that visitors see—sort of like the front door of your house. You have only a few seconds to convince new visitors that they should explore your site. The page needs to be appealing and your value proposition should be clear and enticing.'
+      info_text_2: 'If you want to have a completely customized landing page for your marketplace, you can purchase it as an add-on for $99 per month.'
+      btn_text: 'Learn more about the Custom Landing Page add-on'
     notifications:
       privacy_updated: 'Privacy settings were updated'
       essentials_updated: 'Basic marketplace details were updated'

@@ -180,17 +180,20 @@ Rails.application.routes.draw do
             patch :update_essential
           end
         end
-        resources :admin_notifications, only: %i[index] do
+        resources :admin_notifications, path: 'admin-notifications', only: %i[index] do
           collection do
             patch :update_admin_notifications
           end
         end
-        resources :static_content, only: %i[index]
+        resources :static_content, path: 'static-content', only: %i[index]
         resources :privacy, only: %i[index] do
           collection do
             patch :update_privacy
           end
         end
+      end
+      namespace :design do
+        resources :landing_page, path: 'landing-page', only: %i[index]
       end
     end
 
