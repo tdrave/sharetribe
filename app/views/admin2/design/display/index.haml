@@ -1,52 +1,16 @@
+- content_for :title do
+  = t('admin2.sidebar.design.display')
+
 .content-card-header
-  %h1.content-card-header-title Display
+  %h1.content-card-header-title
+    = t('admin2.sidebar.design.display')
+
 .content-card-section-container
-  = form_for @current_community, url: update_essential_admin2_general_essentials_path, html: { class: %i[content-card-section-form] }, method: :patch do
+  = form_for @current_community, url: update_display_admin2_design_display_index_path, html: { class: %i[content-card-section-form] }, method: :patch do |form|
 
-    %section.content-card-section
-      %h2 Browse view display settings
-      .content-card-section-form
-        .form-group
-          %label{:for => "defaultBrowseView"} Default browse view
-          .form-radiobutton-wrapper
-            .form-radiobutton.form-check-inline
-              %input#Grid.form-check-input{:checked => "checked", :name => "defaultBrowseView", :type => "radio", :value => "Grid"}/
-              %label.form-check-label{:for => "Grid"} Grid
-            .form-radiobutton.form-check-inline
-              %input#List.form-check-input{:name => "defaultBrowseView", :type => "radio", :value => "List"}/
-              %label.form-check-label{:for => "List"} List
-            .form-radiobutton.form-check-inline
-              %input#Map.form-check-input{:name => "defaultBrowseView", :type => "radio", :value => "Map"}/
-              %label.form-check-label{:for => "Map"} Map
-          %small#defaultBrowseView-help.form-text The default browse view determines how the listings are displayed on the homepage by default.
-
-    %section.content-card-section
-      %h2 User display settings
-      .content-card-section-form
-        .form-group
-          %label{:for => "displayNameType"} Display name type
-          .form-radiobutton-wrapper
-            .form-radiobutton.form-check-inline
-              %input#JohnDoe.form-check-input{:name => "displayNameType", :type => "radio", :value => "John Doe"}/
-              %label.form-check-label{:for => "JohnDoe"} John Doe
-            .form-radiobutton.form-check-inline
-              %input#JohnD.form-check-input{:checked => "checked", :name => "displayNameType", :type => "radio", :value => "John D."}/
-              %label.form-check-label{:for => "JohnD"} John D.
-            .form-radiobutton.form-check-inline
-              %input#John.form-check-input{:name => "displayNameType", :type => "radio", :value => "John"}/
-              %label.form-check-label{:for => "John"} John
-          %small#displayNameType-help.form-text Display name type determines how the name of each user is shown on the marketplace.
-
-    %section.content-card-section
-      %h2 Listing display settings
-      .content-card-section-form
-        .form-group
-          .form-check
-            %input#showListingTypeListView.form-check-input{:checked => "checked", :type => "checkbox"}/
-            %label.form-check-label{:for => "showListingTypeListView"} Show listing's type on the List view
-          .form-check
-            %input#showListingDateonListingPage.form-check-input{:type => "checkbox"}/
-            %label.form-check-label{:for => "showListingDateonListingPage"} Show listing's publishing date on the listing page
+    = render 'admin2/design/display/browse_view', form: form
+    = render 'admin2/design/display/user_display', form: form
+    = render 'admin2/design/display/listing_display', form: form
 
     .content-card-terminal
-      %a.btn.btn-primary{:href => "#"} Save changes
+      = button_tag t('admin2.save_changes'), class: %i[btn btn-primary]

@@ -20,7 +20,7 @@ fr:
       design_group: 'lorem ipsum'
       design:
         landing_page: 'lorem ipsum'
-        display: lorem ipsum
+        display: 'lorem ipsum'
     privacy:
       private_marketplace: 'lorem ipsum'
       header: 'lorem ipsum'
@@ -58,11 +58,28 @@ fr:
       info_text_1: 'lorem ipsum'
       info_text_2: 'lorem ipsum'
       btn_text: 'lorem ipsum'
+    display:
+      grid: 'lorem ipsum'
+      list: 'lorem ipsum'
+      map: 'lorem ipsum'
+      full_name: 'lorem ipsum'
+      first_name_with_initial: 'lorem ipsum'
+      first_name_only: 'lorem ipsum'
+      show_category_in_listing_list: 'lorem ipsum'
+      show_listing_publishing_date: 'lorem ipsum'
+      listing_display_header: 'lorem ipsum'
+      user_display: 'lorem ipsum'
+      user_display_header: 'lorem ipsum'
+      user_display_info_text: 'lorem ipsum'
+      browse_view: 'lorem ipsum'
+      browse_view_header: 'lorem ipsum'
+      browse_view_info_text: 'lorem ipsum'      
     notifications:
       privacy_updated: 'lorem ipsum'
       essentials_updated: 'lorem ipsum'
       essentials_update_failed: 'lorem ipsum'
       admin_notifications_updated: 'lorem ipsum'
+      display_updated: 'lorem ipsum'
     seo:
       title: 'lorem ipsum'
       description: 'lorem ipsum'

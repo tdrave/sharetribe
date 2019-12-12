@@ -58,11 +58,28 @@ en:
       info_text_1: 'The landing page is perhaps most important page of your marketplace. It is the first page that visitors see—sort of like the front door of your house. You have only a few seconds to convince new visitors that they should explore your site. The page needs to be appealing and your value proposition should be clear and enticing.'
       info_text_2: 'If you want to have a completely customized landing page for your marketplace, you can purchase it as an add-on for $99 per month.'
       btn_text: 'Learn more about the Custom Landing Page add-on'
+    display:
+      grid: 'Grid'
+      list: 'List'
+      map: 'Map'
+      full_name: 'John Doe'
+      first_name_with_initial: 'John D.'
+      first_name_only: 'John'
+      show_category_in_listing_list: "Show listing's type on the List view"
+      show_listing_publishing_date: "Show listing's publishing date on the listing page"
+      listing_display_header: 'Listing display settings'
+      user_display: 'Display name type'
+      user_display_header: 'User display settings'
+      user_display_info_text: 'Display name type determines how the name of each user is shown on the marketplace.'
+      browse_view: 'Default browse view'
+      browse_view_header: 'Browse view display settings'
+      browse_view_info_text: 'The default browse view determines how the listings are displayed on the homepage by default.'
     notifications:
       privacy_updated: 'Privacy settings were updated'
       essentials_updated: 'Basic marketplace details were updated'
       essentials_update_failed: 'Basic marketplace details update failed'
       admin_notifications_updated: 'Admin notifications settings were updated'
+      display_updated: 'Display settings were updated'
     seo:
       title: '%{title} | %{service_name} Go Admin panel'
       description: 'Manage the %{title} settings of your %{service_name} Sharetribe Go marketplace'
