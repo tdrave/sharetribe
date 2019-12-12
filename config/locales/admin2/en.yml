@@ -2,6 +2,7 @@ en:
   admin2:
     save_changes: 'Save changes'
     topnav:
+      admin_menu: 'Admin menu'
       logo: 'Sharetribe Go Admin Panel'
       menu: 'Menu'
       go_to_your: 'Go to your'

@@ -1,0 +1,68 @@
+fr:
+  admin2:
+    save_changes: 'lorem ipsum'
+    topnav:
+      admin_menu: 'lorem ipsum'
+      logo: 'lorem ipsum'
+      menu: 'lorem ipsum'
+      go_to_your: 'lorem ipsum'
+      marketplace: 'lorem ipsum'
+      avatar: 'lorem ipsum'
+      logout: 'lorem ipsum'
+    sidebar:
+      dashboard: 'lorem ipsum'
+      general_group: 'lorem ipsum'
+      general:
+        essentials: 'lorem ipsum'
+        privacy: 'lorem ipsum'
+        static_content: 'lorem ipsum'
+        admin_notifications: 'lorem ipsum'
+      design_group: 'lorem ipsum'
+      design:
+        landing_page: 'lorem ipsum'
+        display: lorem ipsum
+    privacy:
+      private_marketplace: 'lorem ipsum'
+      header: 'lorem ipsum'
+      private: 'lorem ipsum'
+      info_text: 'lorem ipsum'
+    essentials:
+      header_link: 'lorem ipsum'
+      header: 'lorem ipsum'
+      community_name: 'lorem ipsum'
+      community_info_text: 'lorem ipsum'
+      community_slogan: 'lorem ipsum'
+      community_slogan_info_text: 'lorem ipsum'
+      community_description: 'lorem ipsum'
+      community_description_info_text: 'lorem ipsum'
+      default_language: 'lorem ipsum'
+      marketplace_languages: 'lorem ipsum'
+      color: 'lorem ipsum'
+      show_slogan: 'lorem ipsum'
+      show_description: 'lorem ipsum'
+    admin_notifications:
+      header: 'lorem ipsum'
+      info_text: 'lorem ipsum'
+      email_admins_about_new_members: 'lorem ipsum'
+      email_admins_about_new_transactions: 'lorem ipsum'
+    static_content:
+      header: 'lorem ipsum'
+      info_text: 'lorem ipsum'
+      about: 'lorem ipsum'
+      how_it_works: 'lorem ipsum'
+      privacy_policy: 'lorem ipsum'
+      terms_of_use: 'lorem ipsum'
+      edit: 'lorem ipsum'
+    landing_page:
+      header: 'lorem ipsum'
+      info_text_1: 'lorem ipsum'
+      info_text_2: 'lorem ipsum'
+      btn_text: 'lorem ipsum'
+    notifications:
+      privacy_updated: 'lorem ipsum'
+      essentials_updated: 'lorem ipsum'
+      essentials_update_failed: 'lorem ipsum'
+      admin_notifications_updated: 'lorem ipsum'
+    seo:
+      title: 'lorem ipsum'
+      description: 'lorem ipsum'
