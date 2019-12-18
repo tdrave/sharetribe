@@ -21,6 +21,7 @@ en:
       design:
         landing_page: 'Landing page'
         display: 'Display'
+        experimental: 'Experimental'
     privacy:
       private_marketplace: 'Private marketplace'
       header: 'Private marketplace landing page content'

@@ -47,8 +47,8 @@
             %a{:href => 'footer.php'} Footer
           %li#display-mobile{class: active_li('display')}
             = link_to t('admin2.sidebar.design.display'), admin2_design_display_index_path
-          %li#experimental-mobile
-            %a{:href => 'experimental.php'} Experimental
+          %li#experimental-mobile{class: active_li('experimental')}
+            = link_to t('admin2.sidebar.design.experimental'), admin2_design_experimental_index_path
         / Divider
         %hr/
         / Users

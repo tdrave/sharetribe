@@ -199,6 +199,11 @@ Rails.application.routes.draw do
             patch :update_display
           end
         end
+        resources :experimental, only: %i[index] do
+          collection do
+            patch :update_experimental
+          end
+        end
       end
     end
 

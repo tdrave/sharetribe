@@ -21,6 +21,7 @@ fr:
       design:
         landing_page: 'lorem ipsum'
         display: 'lorem ipsum'
+        experimental: 'lorem ipsum'
     privacy:
       private_marketplace: 'lorem ipsum'
       header: 'lorem ipsum'
