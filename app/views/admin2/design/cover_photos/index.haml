@@ -1,0 +1,24 @@
+.content-card-header
+  %h1.content-card-header-title Cover photos
+  %a.content-card-header-link{:href => "/?big_cover_photo=true"} Preview homepage
+.content-card-section-container
+  = form_for @current_community, url: update_cover_photos_admin2_design_cover_photos_path, html: { multipart: true, class: %i[content-card-section-form] }, method: :patch do |form|
+    %section.content-card-section
+      %h2 Cover photos
+      %p.ingress
+        Are you looking for some ready-made and optimized cover pictures? Or would you like some inspiration and websites where to find great cover pictures?
+        = succeed "!" do
+          %a{:href => "https://help.sharetribe.com/en/articles/666084", :target => "_blank"} We have you covered
+      .content-card-section-form
+        .form-group
+          %label{:for => "coverphoto"} Cover photo
+          .custom-file
+            %input{:accept => "image/*", :name => "coverphoto", :type => "file"}/
+          %small#coverphoto-help.form-text The cover photo is shown in the homepage for users who are not logged in. The dimensions should be 1920x450 pixels.
+        .form-group
+          %label{:for => "smallcoverphoto"} Small cover photo
+          .custom-file
+            %input{:accept => "image/*", :name => "smallcoverphoto", :type => "file"}/
+          %small#smallcoverphoto-help.form-text The small cover photo is shown in all pages except on the homepage for users who are not logged in. The dimensions should be 1920x96 pixels.
+    .content-card-terminal
+      = button_tag t('admin2.save_changes'), class: %i[btn btn-primary]

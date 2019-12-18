@@ -19,6 +19,7 @@ en:
         admin_notifications: 'Admin notifications'
       design_group: 'Design'
       design:
+        cover_photos: 'Cover photos'
         logos_and_color: 'Logos & Color'
         landing_page: 'Landing page'
         display: 'Display'

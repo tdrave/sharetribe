@@ -209,6 +209,11 @@ Rails.application.routes.draw do
             patch :update_logos_color
           end
         end
+        resources :cover_photos, path: 'cover-photos', only: %i[index] do
+          collection do
+            patch :update_cover_photos
+          end
+        end
       end
     end
 
