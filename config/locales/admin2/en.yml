@@ -19,9 +19,22 @@ en:
         admin_notifications: 'Admin notifications'
       design_group: 'Design'
       design:
+        logos_and_color: 'Logos & Color'
         landing_page: 'Landing page'
         display: 'Display'
         experimental: 'Experimental'
+    logos_and_color:
+      favicon: 'Favicon'
+      favicon_info_text: "The favicon will be shown in the browser's tab. The dimensions should be 32x32 pixels."
+      not_added: "You haven't added a %{name} yet."
+      color: 'Color'
+      color_info_text: 'The marketplace color is used in many places of the interface and email notifications.'
+      marketplace_color: 'Marketplace color'
+      logos: 'Logos'
+      main_logo: 'Main logo'
+      main_logo_info_text: 'The main logo will be shown on your marketplace Top bar and in automatic email notifications. The dimensions should be 336x80 pixels.'
+      square_logo: 'Square logo'
+      square_logo_info_text: 'The square logo will be shown when you perform some actions as an admin and when people bookmark your site to the home screen of their mobile device. The dimensions should be (at least) 600x600 pixels.'
     privacy:
       private_marketplace: 'Private marketplace'
       header: 'Private marketplace landing page content'
@@ -81,6 +94,7 @@ en:
       essentials_update_failed: 'Basic marketplace details update failed'
       admin_notifications_updated: 'Admin notifications settings were updated'
       display_updated: 'Display settings were updated'
+      logos_updated: 'Logos & Color settings were updated'
     seo:
       title: '%{title} | %{service_name} Go Admin panel'
       description: 'Manage the %{title} settings of your %{service_name} Sharetribe Go marketplace'

@@ -2,12 +2,18 @@
   opacity: 0.4
 }
 
+input#colorpicker-color {
+  border: 0;
+  width: 0;
+  display: none !important;
+}
+
 .select-language-admin {
   .select2-selection {
     box-shadow: none !important;
     min-height: 48px !important;
     font-size: 16px !important;
-    font-family: "CircularStd", Arial !important;
+    font-family: 'CircularStd', 'Arial' !important;
   }
 
   .select2-container {
@@ -33,7 +39,8 @@
 }
 
 input#colorpicker-description.multi-language-color,
-input#colorpicker-slogan.multi-language-color{
+input#colorpicker-slogan.multi-language-color,
+input#colorpicker-color.multi-language-color{
   position: absolute !important;
   margin: 12px 0 0 200px !important;
   box-shadow: none !important;
@@ -44,4 +51,16 @@ input#colorpicker-slogan.multi-language-color{
   &:focus {
     outline: none;
   }
+}
+
+input#colorpicker-color.multi-language-color {
+  margin: 12px 0 0 90px !important;
+}
+
+.choose-filename {
+  position: absolute;
+  margin-left: 150px;
+  margin-top: 11px;
+  background-color: white;
+  width: 400px;
 }

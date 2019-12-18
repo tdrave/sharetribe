@@ -10,8 +10,13 @@ $(function(){
        }
     });
 
+    $('.change-file').on('change', function() {
+       var place = $(this).parents('.custom-file').find('.choose-filename');
+       place.hide();
+    });
+
     if ($('#colorpicker-slogan').length) {
-        $("#colorpicker-slogan, #colorpicker-description, #colorpicker-description").spectrum({
+        $("#colorpicker-slogan, #colorpicker-description").spectrum({
             color: $(this).val(),
             showInput: true,
             preferredFormat: "hex",
@@ -19,7 +24,19 @@ $(function(){
             showSelectionPalette: false,
             palette: [["#FFF", "#000", "#ED4F2E", "#15778E", "#ff5a5f"]]
         });
-        $("#colorpicker-slogan, #colorpicker-description, #colorpicker-description").show();
+        $("#colorpicker-slogan, #colorpicker-description").show();
+    }
+
+    if ($('#colorpicker-color').length) {
+        $("#colorpicker-color").spectrum({
+            color: $(this).val(),
+            showInput: true,
+            preferredFormat: "hex",
+            showPalette: true,
+            showSelectionPalette: false,
+            palette: [["#FFF", "#000", "#ED4F2E", "#15778E", "#ff5a5f"]]
+        });
+        $("#colorpicker-color").show();
     }
 
 });

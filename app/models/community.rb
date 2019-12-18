@@ -333,12 +333,19 @@ class Community < ApplicationRecord
   def check_colors
     self.slogan_color = slogan_color.to_s.delete('#').presence
     self.description_color = description_color.to_s.delete('#').presence
+    self.custom_color1 = custom_color1.to_s.delete('#').presence
   end
 
   def description_color_string
     return unless description_color.present?
 
     "##{description_color}"
+  end
+
+  def custom_color1_string
+    return unless custom_color1.present?
+
+    "##{custom_color1}"
   end
 
   def slogan_color_string

@@ -204,6 +204,11 @@ Rails.application.routes.draw do
             patch :update_experimental
           end
         end
+        resources :logos_color, path: 'logos-and-color', only: %i[index] do
+          collection do
+            patch :update_logos_color
+          end
+        end
       end
     end
 

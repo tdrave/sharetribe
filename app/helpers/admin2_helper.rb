@@ -11,18 +11,18 @@ module Admin2Helper
   def expand_rules
     {
       general: %w[essentials privacy static_content admin_notifications],
-      design: %w[landing_page display experimental]
+      design: %w[logos_color landing_page display experimental]
     }
   end
 
   def admin_title
     title = t('admin2.seo.title', title: content_for(:title), service_name: title_service_name)
-    strip_tags(custom_meta_title(title.squish))
+    strip_tags(custom_meta_title(title.squish)).html_safe
   end
 
   def admin_description
     title = t('admin2.seo.description', title: content_for(:title), service_name: title_service_name)
-    strip_tags(custom_meta_description(title.squish))
+    strip_tags(custom_meta_description(title.squish)).html_safe
   end
 
   def title_service_name
