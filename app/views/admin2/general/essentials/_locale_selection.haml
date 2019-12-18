@@ -1,4 +1,4 @@
-.form-group
+.form-group.select-language-admin
   %label
     = t('admin2.essentials.marketplace_languages')
   = select_tag 'enabled_locales[]', options_for_select(all_locales.map { |l| [l[:translated_name], l[:locale_key]] }, enabled_locale_keys), multiple: true, class: %i[form-control required], required: true
