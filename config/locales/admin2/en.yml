@@ -24,6 +24,13 @@ en:
         landing_page: 'Landing page'
         display: 'Display'
         experimental: 'Experimental'
+    cover_photos:
+      preview_homepage: 'Preview homepage'
+      description: 'Are you looking for some ready-made and optimized cover pictures? Or would you like some inspiration and websites where to find great cover pictures? <a href="%{href}" target="_blank">We have you covered</a>!'
+      cover_photo: 'Cover photo'
+      cover_photo_info_text: 'The cover photo is shown in the homepage for users who are not logged in. The dimensions should be 1920x450 pixels.'
+      small_cover_photo: 'Small cover photo'
+      small_cover_photo_info_text: 'The small cover photo is shown in all pages except on the homepage for users who are not logged in. The dimensions should be 1920x96 pixels.'
     logos_and_color:
       favicon: 'Favicon'
       favicon_info_text: "The favicon will be shown in the browser's tab. The dimensions should be 32x32 pixels."
@@ -96,6 +103,7 @@ en:
       admin_notifications_updated: 'Admin notifications settings were updated'
       display_updated: 'Display settings were updated'
       logos_updated: 'Logos & Color settings were updated'
+      cover_photos_updated: 'Cover photos settings were updated'
     seo:
       title: '%{title} | %{service_name} Go Admin panel'
       description: 'Manage the %{title} settings of your %{service_name} Sharetribe Go marketplace'
