@@ -49,13 +49,13 @@
       %ul.category-title
         %li
           %a.dropdown-toggle{'aria-controls' => 'users', 'aria-expanded' => 'false', 'data-toggle' => 'collapse', :href => '#users', :role => 'button'} Users
-      %ul#users.collapse.subtitle
+      %ul#users.collapse.subtitle{class: expand_ul('users')}
         %li#manageusers
           %a{:href => 'manage-users.php'} Manage users
         %li#userfields
           %a{:href => 'user-fields.php'} User fields
-        %li#signuplogin
-          %a{:href => 'signup-login.php'} Signup &amp; Login
+        %li#signuplogin{class: active_li('signup_login')}
+          = link_to t('admin2.sidebar.design.signup_login'), admin2_users_signup_login_index_path
         %li#userrights
           %a{:href => 'user-rights.php'} User rights
         %li#invitations

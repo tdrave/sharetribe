@@ -24,6 +24,9 @@ en:
         landing_page: 'Landing page'
         display: 'Display'
         experimental: 'Experimental'
+        signup_login: 'Signup & Login'
+    signup_login:
+      signup_header: 'Signup information text'
     cover_photos:
       preview_homepage: 'Preview homepage'
       description: 'Are you looking for some ready-made and optimized cover pictures? Or would you like some inspiration and websites where to find great cover pictures? <a href="%{href}" target="_blank">We have you covered</a>!'
@@ -104,6 +107,7 @@ en:
       display_updated: 'Display settings were updated'
       logos_updated: 'Logos & Color settings were updated'
       cover_photos_updated: 'Cover photos settings were updated'
+      signup_login_updated: 'Signup & Login settings were updated'
     seo:
       title: '%{title} | %{service_name} Go Admin panel'
       description: 'Manage the %{title} settings of your %{service_name} Sharetribe Go marketplace'

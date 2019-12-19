@@ -1,0 +1,19 @@
+%section.content-card-section
+  %h2 LinkedIn
+  %p.ingress
+    To enable LinkedIn Sign In, create an app for your marketplace in the
+    = succeed "." do
+      %a{:href => "https://www.linkedin.com/developers/"} LinkedIn Developers Dashboard
+    = succeed "." do
+      %a{:href => "https://help.sharetribe.com/sharetribe-go-managing-your-go-marketplace/third-party-sign-up-services/how-to-configure-linkedin-sign-in"} See instructions for configuring LinkedIn Sign In
+  .content-card-section-form
+    - disable_link = !@current_community.linkedin_connect_enabled?
+    .form-group
+      = form.label :linkedin_connect_id, 'LinkedIn Client ID', disabled: disable_link
+      = form.text_field :linkedin_connect_id, class: %i[form-control], placeholder: '86xb8ms47icxgw', disabled: disable_link
+    .form-group
+      = form.label :linkedin_connect_secret, 'LinkedIn Client Secret', disabled: disable_link
+      = form.text_field :linkedin_connect_secret, class: %i[form-control], placeholder: 'cVjH9Q2Butjm2J90', disabled: disable_link
+    .form-check
+      = form.check_box :linkedin_connect_enabled, class: %i[form-check-input]
+      = form.label :linkedin_connect_enabled, 'Users can sign up and login with a LinkedIn account', class: %i[form-check-label]

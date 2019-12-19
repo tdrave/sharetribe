@@ -1,0 +1,19 @@
+%section.content-card-section
+  %h2 Facebook
+  %p.ingress
+    To enable Facebook Login, you must create an application for your marketplace in the
+    = succeed "." do
+      %a{:href => "https://developers.facebook.com/"} Facebook Developers Dashboard
+    = succeed "." do
+      %a{:href => "https://help.sharetribe.com/configuration-and-how-to/how-to-configure-facebook-connect"} See instructions for configuring Facebook Login
+  .content-card-section-form
+    - disable_facebook = !@current_community.facebook_connect_enabled?
+    .form-group
+      = form.label :facebook_connect_id, 'Facebook App ID', disabled: disable_facebook
+      = form.text_field :facebook_connect_id, maxlength: 16, class: %i[form-control], placeholder: '1234567890123456', disabled: disable_facebook
+    .form-group
+      = form.label :facebook_connect_secret, 'Facebook App Secret', disabled: disable_facebook
+      = form.text_field :facebook_connect_secret, maxlength: 32, class: %i[form-control], placeholder: Digest::MD5.hexdigest('1'), disabled: disable_facebook
+    .form-check
+      = form.check_box :facebook_connect_enabled, class: %i[form-check-input]
+      = form.label :facebook_connect_enabled, 'Users can sign up and log in with a Facebook account', class: %i[form-check-label]

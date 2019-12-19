@@ -215,6 +215,13 @@ Rails.application.routes.draw do
           end
         end
       end
+      namespace :users do
+        resources :signup_login, path: 'signup-and-login', only: %i[index] do
+          collection do
+            patch :update_signup_login
+          end
+        end
+      end
     end
 
     get '/:locale/admin2', to: redirect('/%{locale}/admin2/dashboard')

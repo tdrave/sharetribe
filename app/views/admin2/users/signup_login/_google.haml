@@ -1,0 +1,19 @@
+%section.content-card-section
+  %h2 Google
+  %p.ingress
+    To enable Google Sign-In, create a project for your marketplace in the
+    = succeed "." do
+      %a{:href => "https://developers.google.com/identity/sign-in/web/sign-in"} Google Developers Console
+    = succeed "." do
+      %a{:href => "https://help.sharetribe.com/sharetribe-go-managing-your-go-marketplace/third-party-sign-up-services/how-to-configure-google-sign-in"} See instructions for configuring Google Sign-In
+  .content-card-section-form
+    - disable_google = !@current_community.google_connect_enabled?
+    .form-group
+      = form.label :google_connect_id, 'Google Client ID', disabled: disable_google
+      = form.text_field :google_connect_id, class: %i[form-control], placeholder: '23456789-564sqsdLdglks2187pouUs275Uahdbs7of.apps.googleusercontent.com', disabled: disable_google
+    .form-group
+      = form.label :google_connect_secret, 'Google Client secret', disabled: disable_google
+      = form.text_field :google_connect_secret, class: %i[form-control], placeholder: 'Qsd1ljs9qfPOA4nePsp5dglj', disabled: disable_google
+    .form-check
+      = form.check_box :google_connect_enabled, class: %i[form-check-input]
+      = form.label :google_connect_enabled, 'Users can sign up and login with a Google account', class: %i[form-check-label]

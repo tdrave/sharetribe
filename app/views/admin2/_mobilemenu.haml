@@ -55,13 +55,13 @@
         %ul.category-title
           %li
             %a.dropdown-toggle{'aria-controls' => 'users-mobile', 'aria-expanded' => 'false', 'data-toggle' => 'collapse', :href => '#users-mobile', :role => 'button'} Users
-        %ul#users-mobile.collapse.subtitle
+        %ul#users-mobile.collapse.subtitle{class: expand_ul('users')}
           %li#manageusers-mobile
             %a{:href => 'manage-users.php'} Manage users
           %li#userfields-mobile
             %a{:href => 'user-fields.php'} User fields
-          %li#signuplogin-mobile
-            %a{:href => 'signup-login.php'} Signup &amp; Login
+          %li#signuplogin-mobile{class: active_li('signup_login')}
+            = link_to t('admin2.sidebar.design.signup_login'), admin2_users_signup_login_index_path
           %li#userrights-mobile
             %a{:href => 'user-rights.php'} User rights
           %li#invitations-mobile

@@ -19,10 +19,18 @@ fr:
         admin_notifications: 'lorem ipsum'
       design_group: 'lorem ipsum'
       design:
+        cover_photos: 'lorem ipsum'
         logos_and_color: 'lorem ipsum'
         landing_page: 'lorem ipsum'
         display: 'lorem ipsum'
         experimental: 'lorem ipsum'
+    cover_photos:
+      preview_homepage: 'lorem ipsum'
+      description: 'lorem ipsum'
+      cover_photo: 'lorem ipsum'
+      cover_photo_info_text: 'lorem ipsum'
+      small_cover_photo: 'lorem ipsum'
+      small_cover_photo_info_text: 'lorem ipsum'
     logos_and_color:
       favicon: 'lorem ipsum'
       favicon_info_text: 'lorem ipsum'
@@ -95,6 +103,7 @@ fr:
       admin_notifications_updated: 'lorem ipsum'
       display_updated: 'lorem ipsum'
       logos_updated: 'lorem ipsum'
+      cover_photos_updated: 'lorem ipsum'
     seo:
       title: 'lorem ipsum'
       description: 'lorem ipsum'

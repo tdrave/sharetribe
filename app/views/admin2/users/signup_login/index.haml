@@ -1,0 +1,23 @@
+- content_for :title do
+  = t('admin2.sidebar.design.signup_login')
+
+.content-card-header
+  %h1.content-card-header-title
+    = t('admin2.signup_login.signup_header')
+
+.content-card-section-container
+  = form_for @current_community, url: update_signup_login_admin2_users_signup_login_index_path, html: { multipart: true, class: %i[content-card-section-form] }, method: :patch do |form|
+    %section.content-card-section
+      %h2 Signup information text
+      .content-card-section-form
+        .form-group
+          %label Signup information text
+          %textarea#signupInfoText.form-control{"aria-describedby" => "signupInfoText", :placeholder => "", :type => "text"} HTML content, there will be an editor top bar here in the future, in a separate task.
+          %small#marketplaceName-help.form-text Info text that will be shown to users in the Sign up. You can give the users instructions for signing up, information like where to get an invite, etc.
+
+    = render 'facebook', form: form
+    = render 'google', form: form
+    = render 'linked_in', form: form
+
+    .content-card-terminal
+      = button_tag t('admin2.save_changes'), class: %i[btn btn-primary]
