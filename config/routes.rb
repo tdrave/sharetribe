@@ -217,6 +217,8 @@ Rails.application.routes.draw do
       end
     end
 
+    get '/:locale/admin2', to: redirect('/%{locale}/admin2/dashboard')
+
     namespace :admin do
       get '' => "getting_started_guide#index"
 
